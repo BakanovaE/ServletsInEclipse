@@ -12,14 +12,13 @@ public class NotFoundServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
           
+    	String message = getServletContext().getInitParameter("message");
+        
         response.setContentType("text/html");
         PrintWriter writer = response.getWriter();
-        String id = request.getParameter("id");
-         
-        try {
-            writer.println("<h2>Not Found: " + id + "</h2>");
-        } finally {
-            writer.close();  
-        }
+        
+        writer.println("<h2>" + message+ "</h2>");
+        
+        writer.close();
     }
 }
