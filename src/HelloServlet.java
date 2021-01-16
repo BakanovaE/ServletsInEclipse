@@ -12,15 +12,8 @@ public class HelloServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
     	
-    	String message = getServletConfig().getInitParameter("message1");
-    	
-        response.setContentType("text/html");
-        
-        PrintWriter writer = response.getWriter();
-       
-       writer.println("<h2>" + message+ "</h2>");
-       
-       writer.close();
+    	 int x = 0;
+         int y = 8 / x;
       
     }
 }
