@@ -18,8 +18,13 @@ public class HelloServlet extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter writer = response.getWriter();
 		
+		String[] nums = request.getParameterValues("nums");
+		
 		try {
-			writer.println("<h2>Hello from HelloServlet<h2>");
+			writer.println("<h2>Nums: ");
+			for (String n : nums)
+				writer.println(n + " ");
+			writer.println("</h2");
 		} finally {
 			writer.close();
 		}
